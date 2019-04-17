@@ -6,7 +6,7 @@ var path = require('path')
 
 var words = require('./api/words.route');
 
-var app = express();
+const app = express();
 
 app.use(favicon(path.join(__dirname, 'public', 'favicon.ico')))
 app.use(cors())
@@ -22,5 +22,5 @@ app.get('/', function(req, res) {
 
 app.use("*", (req, res) => res.status(404).json({ error: "not found" }));
 
-exports = module.exports = app;
+export default app;
 
